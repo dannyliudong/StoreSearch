@@ -40,6 +40,12 @@ class SearchViewController: UIViewController {
         searchBar.becomeFirstResponder()
 
     }
+    
+    func iTunesURL(searchText: String) -> URL {
+        let urlString = String(format: "https://itunes.apple.com/search?term=%@", searchText)
+        let url = URL(string: urlString)
+        return url!
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,24 +58,16 @@ class SearchViewController: UIViewController {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        print("...searchBarSearchButtonClicked")
-        
-        searchBar.resignFirstResponder()
-        
-        searchResults = []
-        if searchBar.text! != "justin bieber" {
-            for i in 0...2 {
-                let searchResult = SearchResult()
-                searchResult.name = String(format: "假数据 %d", i)
-                searchResult.artistName = searchBar.text!
-                
-                searchResults.append(searchResult)
-            }
+        if !searchBar.text!.isEmpty {
+            searchBar.resignFirstResponder()
+            
+            hasSearched = true
+            searchResults = []
+            
+            let url = iTunesURL(searchText: searchBar.text!)
+            print("URL:'\(url)'")
+            tableView.reloadData()
         }
-        
-        hasSearched = true
-        tableView.reloadData()
     }
     
     func position(for bar: UIBarPositioning) -> UIBarPosition {
