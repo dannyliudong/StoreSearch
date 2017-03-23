@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A035B4991E7A3EAC000CBE2F"
+               BlueprintIdentifier = "7BD770301D531C2E00422F3B"
                BuildableName = "StoreSearch.app"
                BlueprintName = "StoreSearch"
                ReferencedContainer = "container:StoreSearch.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A035B4991E7A3EAC000CBE2F"
+            BlueprintIdentifier = "7BD770301D531C2E00422F3B"
             BuildableName = "StoreSearch.app"
             BlueprintName = "StoreSearch"
             ReferencedContainer = "container:StoreSearch.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A035B4991E7A3EAC000CBE2F"
+            BlueprintIdentifier = "7BD770301D531C2E00422F3B"
             BuildableName = "StoreSearch.app"
             BlueprintName = "StoreSearch"
             ReferencedContainer = "container:StoreSearch.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A035B4991E7A3EAC000CBE2F"
+            BlueprintIdentifier = "7BD770301D531C2E00422F3B"
             BuildableName = "StoreSearch.app"
             BlueprintName = "StoreSearch"
             ReferencedContainer = "container:StoreSearch.xcodeproj">

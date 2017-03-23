@@ -1,60 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11185.3" systemVersion="16A239j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11151.4"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="qNm-uv-ne2" customClass="SearchResultCell" customModule="StoreSearch" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" id="oME-bl-fvY" customClass="SearchResultCell" customModule="StoreSearch" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qNm-uv-ne2" id="zmB-6G-RT1">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oME-bl-fvY" id="eyP-Uh-A83">
+                <frame key="frameInset" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SIU-d1-ODf">
-                        <rect key="frame" x="15" y="10" width="60" height="60"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="un6-Oh-H5S">
                         <constraints>
-                            <constraint firstAttribute="width" constant="60" id="2Nz-dw-Q2i"/>
-                            <constraint firstAttribute="height" constant="60" id="Tpl-iI-cRT"/>
+                            <constraint firstAttribute="height" constant="60" id="eP8-4f-F3R"/>
+                            <constraint firstAttribute="width" constant="60" id="xaN-jL-Zds"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2g-Aj-Jg3">
-                        <rect key="frame" x="90" y="15" width="222" height="22"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAc-RQ-1en">
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLT-ga-ogj">
-                        <rect key="frame" x="90" y="44" width="222" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgL-dJ-hTc">
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="TLT-ga-ogj" secondAttribute="bottom" constant="9.5" id="0us-m4-iey"/>
-                    <constraint firstItem="SIU-d1-ODf" firstAttribute="leading" secondItem="zmB-6G-RT1" secondAttribute="leadingMargin" constant="7" id="8g2-K1-UXT"/>
-                    <constraint firstItem="SIU-d1-ODf" firstAttribute="top" secondItem="zmB-6G-RT1" secondAttribute="topMargin" constant="2" id="c8c-ql-v6a"/>
-                    <constraint firstItem="TLT-ga-ogj" firstAttribute="trailing" secondItem="zmB-6G-RT1" secondAttribute="trailingMargin" id="d9S-7z-fJY"/>
-                    <constraint firstItem="O2g-Aj-Jg3" firstAttribute="leading" secondItem="SIU-d1-ODf" secondAttribute="trailing" constant="15" id="gZj-Fv-O4l"/>
-                    <constraint firstItem="O2g-Aj-Jg3" firstAttribute="trailing" secondItem="zmB-6G-RT1" secondAttribute="trailingMargin" id="gvG-xE-O7R"/>
-                    <constraint firstItem="O2g-Aj-Jg3" firstAttribute="top" secondItem="zmB-6G-RT1" secondAttribute="topMargin" constant="7" id="kQF-c0-YQe"/>
+                    <constraint firstAttribute="trailing" secondItem="fgL-dJ-hTc" secondAttribute="trailing" constant="8" id="3gy-Bh-Pmy"/>
+                    <constraint firstItem="un6-Oh-H5S" firstAttribute="top" secondItem="eyP-Uh-A83" secondAttribute="top" constant="10" id="ER6-2I-nzp"/>
+                    <constraint firstItem="fgL-dJ-hTc" firstAttribute="leading" secondItem="un6-Oh-H5S" secondAttribute="trailing" constant="15" id="dh3-WL-uhs"/>
+                    <constraint firstAttribute="bottom" secondItem="fgL-dJ-hTc" secondAttribute="bottom" constant="17" id="gmo-8u-VN5"/>
+                    <constraint firstItem="jAc-RQ-1en" firstAttribute="leading" secondItem="un6-Oh-H5S" secondAttribute="trailing" constant="15" id="i9F-FJ-bSL"/>
+                    <constraint firstItem="jAc-RQ-1en" firstAttribute="top" secondItem="eyP-Uh-A83" secondAttribute="top" constant="15" id="otK-Qd-NTs"/>
+                    <constraint firstAttribute="trailing" secondItem="jAc-RQ-1en" secondAttribute="trailing" constant="8" id="oyX-Fr-iCD"/>
+                    <constraint firstItem="un6-Oh-H5S" firstAttribute="leading" secondItem="eyP-Uh-A83" secondAttribute="leading" constant="15" id="ynp-Sz-MOU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="artistNameLabel" destination="TLT-ga-ogj" id="p4d-La-QOf"/>
-                <outlet property="artworkImageView" destination="SIU-d1-ODf" id="I7T-GF-2ra"/>
-                <outlet property="nameLabel" destination="O2g-Aj-Jg3" id="lOp-MD-mfg"/>
+                <outlet property="artistNameLabel" destination="fgL-dJ-hTc" id="2iA-99-Gy9"/>
+                <outlet property="artworkImageView" destination="un6-Oh-H5S" id="in0-zd-DSk"/>
+                <outlet property="nameLabel" destination="jAc-RQ-1en" id="Z38-SS-WKz"/>
             </connections>
-            <point key="canvasLocation" x="-308" y="81"/>
+            <point key="canvasLocation" x="72.5" y="37"/>
         </tableViewCell>
     </objects>
     <resources>
