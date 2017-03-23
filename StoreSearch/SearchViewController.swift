@@ -52,18 +52,8 @@ class SearchViewController: UIViewController {
     return url!
   }
   
-  func performStoreRequest(with url: URL) -> String? {
-    do {
-      return try String(contentsOf: url, encoding: .utf8)
-    } catch {
-      print("Download Error: \(error)")
-      return nil
-    }
-  }
   
-  func parse(json: String) -> [String: Any]? {
-    guard let data = json.data(using: .utf8, allowLossyConversion: false)
-      else { return nil }
+  func parse(json data: Data) -> [String: Any]? {
     
     do {
       return try JSONSerialization.jsonObject(
@@ -212,30 +202,37 @@ extension SearchViewController: UISearchBarDelegate {
       
       hasSearched = true
       searchResults = []
-      
-      // 1
-      let queue = DispatchQueue.global()
-      // 2
-      queue.async {
-        let url = self.iTunesURL(searchText: searchBar.text!)
         
-        if let jsonString = self.performStoreRequest(with: url),
-          let jsonDictionary = self.parse(json: jsonString) {
-          
-          self.searchResults = self.parse(dictionary: jsonDictionary)
-          self.searchResults.sort(by: <)
-          // 3
-          DispatchQueue.main.async {
-            self.isLoading = false
-            self.tableView.reloadData()
-          }
-          return
-        }
+        let url = iTunesURL(searchText: searchBar.text!)
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
+            if let error = error {
+                print("Failure! \(error)")
+            } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                print("Success! \(data!)")
+                if let data = data, let jsonDictionary = self.parse(json: data) {
+                    self.searchResults = self.parse(dictionary: jsonDictionary)
+                    self.searchResults.sort(by: <)
+                    
+                    DispatchQueue.main.async {
+                        self.isLoading = false
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.hasSearched = false
+                    self.isLoading = false
+                    self.tableView.reloadData()
+                    self.showNetworkError()
+                }
+                
+            } else {
+                print("Failure! \(response)")
+            }
+        })
         
-        DispatchQueue.main.async {
-          self.showNetworkError()
-        }
-      }
+        dataTask.resume()
     }
   }
   
