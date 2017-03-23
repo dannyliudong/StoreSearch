@@ -209,8 +209,10 @@ extension SearchViewController: UISearchBarDelegate {
         let url = iTunesURL(searchText: searchBar.text!)
         let session = URLSession.shared
         dataTask = session.dataTask(with: url, completionHandler: { (data, response, error) in
-            if let error = error {
+            if let error = error as? NSError, error.code == -999 {
                 print("Failure! \(error)")
+                return
+                
             } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                 print("Success! \(data!)")
                 if let data = data, let jsonDictionary = self.parse(json: data) {
