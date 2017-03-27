@@ -106,7 +106,7 @@
                                             <action selector="close:" destination="uHg-w7-mbB" eventType="touchUpInside" id="kXW-1e-Pqw"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-12-IQa">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DdJ-12-IQa">
                                         <rect key="frame" x="70" y="9" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="PCd-Tv-35l"/>

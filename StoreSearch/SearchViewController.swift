@@ -241,7 +241,7 @@ extension SearchViewController: UISearchBarDelegate {
       dataTask = session.dataTask(with: url, completionHandler: {
         data, response, error in
 
-        if let error = error as? NSError, error.code == -999 {
+        if let error = error as NSError?, error.code == -999 {
           return  // Search was cancelled
         
         } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
@@ -259,7 +259,7 @@ extension SearchViewController: UISearchBarDelegate {
             return
           }
         } else {
-          print("Failure! \(response)")
+          print("Failure! \(String(describing: response))")
         }
         
         DispatchQueue.main.async {
